@@ -1,0 +1,572 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.wrapper{
+    background: #fff;
+    width: 450px;
+    border-radius: 16px;
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+.wrapper10{
+    background: #fff;
+    width: 700px;
+    align-items: left;
+    justify-content: left;
+}
+.form{
+    padding: 25px 30px;
+}
+.form header{
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.form form{
+    margin: 20px 0;
+}
+.form form .error-txt{
+    color: #721c24;
+    background: #f8d7da;
+    padding: 8px 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #f5c6cb;
+    display: none;
+}
+.form form .field{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.form form .field label{
+    margin-bottom: 2px;
+}
+.form form .field input{
+    outline: none;
+}
+.form form .input input{
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form form .image input{
+    font-size: 17px;
+}
+.form form .button input{
+    margin-top: 13px;
+    height: 45px;
+    border: none;
+    font-size: 17px;
+    font-weight: 400;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form .link{
+    text-align: center;
+    margin: 10px 0;
+    font-size: 17px;
+}
+.form .link a{
+    color: #333;
+}
+.form .link a:hover{
+    text-decoration: underline;
+}
+/*Users.js*/
+.users{
+    padding: 25px 30px;
+}
+.users header, .users-list a{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid #e6e6e6;
+}
+:is(.users, .users-list) .content{
+    display: flex;
+    align-items: center;
+}
+:is(.users, .users-list) .details{
+    color: #000;
+    margin-left: 15px;
+}
+:is(.users, .users-list) .details span{
+    font-size: 18px;
+    font-weight: 500;
+}
+.wrapper img{
+    object-fit: cover;
+    border-radius: 50%;
+}
+.users header .content img{
+    height: 50px;
+    width: 50px;
+}
+.users header .logout{
+    color: #fff;
+    font-size: 17px;
+    padding: 7px 15px;
+    background: #333;
+    border-radius: 5px;
+}
+.users .search{
+    margin: 20px 0;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+.users .search .text{
+    font-size: 18px;
+}
+.users .search input{
+    position: absolute;
+    height: 42px;
+    width: calc(100% - 50px);
+    border: 1px solid #ccc;
+    padding: 0 13px;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+.users .search button{
+    width: 47px;
+    height: 42px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #333;
+    cursor: pointer;
+    font-size: 17px;
+    border: 0 5px 5px 0;
+}
+
+.users .inbox button{
+    width: 47px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #333;
+    cursor: pointer;
+    font-size: 17px;
+    border: 0 5px 5px 0;
+}
+.users-list{
+    max-height: 350px;
+    overflow-y: auto;
+}
+:is(.users-list, .chat-box)::-webkit-scrollbar{
+    width: 0px;
+}
+.users-list a{
+    margin-bottom: 15px;
+    page-break-after: 10px;
+    padding-right: 15px;
+    border-bottom-color: #f1f1f1;
+}
+.users-list img{
+    height: 40px;
+    width: 40px;
+}
+
+.users .addfriend{
+    color: #fff;
+    padding: 7px 15px;
+    background: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+}
+.users .dropdown{
+    position: relative;
+    display: inline-block;
+    margin-left: 296px;
+}
+.users .dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.users .dropdown-content a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.users .dropdown-content a:hover{background-color: #f1f1f1}
+.users .dropdown:hover .dropdown-content{
+    display: block;
+}
+.users .group{
+    color: #fff;
+    padding: 7px 15px;
+    background: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.users-list .content .addfriendbutton {
+    position: sticky;
+    left: 100%;
+}
+.users-list .content .addfriendbutton button {
+    color: #fff;
+    padding: 7px 15px;
+    background: #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.users-list .content .answerbutton {
+    position: sticky;
+    left: 100%;
+}
+.users-list .content .answerbutton button {
+    color: #fff;
+    padding: 7px 15px;
+    background: #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.users-list a .content img{
+    height: 40px;
+    width: 40px;
+}
+
+.users-list a:last-child{
+    border: none;
+    margin-bottom: 0px;
+}
+.users-list a .content p{
+    color: #67676a;
+}
+/*Code for chat*/
+.chat-area header{
+    display: flex;
+    align-items: center;
+    padding: 18px 30px;
+}
+.chat-area header .back-icon{
+    font-size: 18px;
+    color: #333;
+}
+.chat-area header img{
+    height: 45px;
+    width: 45px;
+    margin: 0 15px;
+}
+.chat-area header button{
+    color: #fff;
+    padding: 7px 15px;
+    background: #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.chat-area header .groupbutton {
+    position: sticky;
+    left: 100%;
+}
+.chat-area header span{
+    font-size: 17px;
+    font-weight: 500;
+}
+.chat-box{
+    height: 500px;
+    overflow-y: auto;
+    background: #f7f7f7;
+    padding: 10px 30px 20px 30px;
+    box-shadow: inset 0 32px 32px -32px rgb(0 0 0 / 5%), inset 0 -32px 32px -32px rgb(0 0 0 / 5%);
+}
+.chat-box .chat{
+    margin: 15px 0;
+}
+.chat-box .chat p{
+    word-break: break-word;
+    padding: 8px 16px;
+    box-shadow: 0 0 32px rgb(0 0 0 / 8%), 0 16px 16px -16px rgb(0 0 0 / 10%);
+}
+.outgoing .details{
+    margin-left: auto;
+    max-width: calc(100% - 130px);
+}
+.chat-box .outgoing{
+    display: flex;
+}
+.outgoing .details p{
+    background: #333;
+    color: #fff;
+    border-radius: 18px 18px 0 18px;
+}
+.outgoing .details img{
+    width: 240px;
+    height: 240px;
+    border-radius: 0%;
+}
+.chat-box .incoming{
+    display: flex;
+    align-items: flex-end;
+}
+.incoming .details{
+    margin-left: 10px;
+    margin-right: auto;
+    max-width: calc(100% - 130px);
+}
+.incoming .details p{
+    color: #333;
+    background: #fff;
+    border-radius: 18px 18px 18px 0;
+}
+.incoming .details img{
+    width: 240px;
+    height: 240px;
+    border-radius: 0%;
+}
+.chat-area .typing-area{
+    padding: 18px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.typing-area input{
+    height: 45px;
+    width: calc(100% - 58px);
+    font-size: 17px;
+    border: 1px solid #ccc;
+    padding: 0 13px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.typing-area .sendbutton button{
+    width: 55px;
+    height: 45px;
+    border: none;
+    outline: none;
+    background: #333;
+    color: #fff;
+    font-size: 19px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+.typing-area .filebutton{
+    margin-right: 10px;
+    margin-top: 7px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background: #333;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.typing-area .filebutton i{
+    margin-top: 8px;
+}
+
+.users a{
+    color: black;
+}
+/*Code for grouplist*/
+.users header, .groups-list a{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid #e6e6e6;
+}
+:is(.users, .groups-list) .content{
+    display: flex;
+    align-items: center;
+}
+:is(.users, .groups-list) .details{
+    color: #000;
+    margin-left: 15px;
+}
+:is(.users, .groups-list) .details span{
+    font-size: 18px;
+    font-weight: 500;
+}
+.groups-list{
+    max-height: 350px;
+    overflow-y: auto;
+}
+:is(.groups-list, .chat-box)::-webkit-scrollbar{
+    width: 0px;
+}
+.groups-list a{
+    margin-bottom: 15px;
+    page-break-after: 10px;
+    padding-right: 15px;
+    border-bottom-color: #f1f1f1;
+}
+.groups-list img{
+    height: 40px;
+    width: 40px;
+}
+.groups-list .content .addfriendbutton {
+    position: sticky;
+    left: 100%;
+}
+.groups-list .content .addfriendbutton button {
+    color: #fff;
+    padding: 7px 15px;
+    background: #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.groups-list .content .answerbutton {
+    position: sticky;
+    left: 100%;
+}
+.groups-list .content .answerbutton button {
+    color: #fff;
+    padding: 7px 15px;
+    background: #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.groups-list a .content img{
+    height: 40px;
+    width: 40px;
+}
+
+.groups-list a:last-child{
+    border: none;
+    margin-bottom: 0px;
+}
+.groups-list a .content p{
+    color: #67676a;
+}
+.phone{
+    cursor: pointer;
+}
+.phone2{
+    cursor: pointer;
+    color: green;
+}
+/*Code for Calls*/
+.localCam{
+    height: 105px;
+    width: 140px;
+    position: absolute;
+}
+.remoteCam{
+    height: 100%;
+    width: 100%;
+}
+.hangup{
+    position:absolute;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    border-width: thin;
+    height: 40px;
+    width: 40px;
+    left: 50%;
+    top: 82%;
+    cursor: pointer;
+    transform: rotate(225deg);
+}
+.mute{
+    position:absolute;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    border-width: thin;
+    height: 40px;
+    width: 40px;
+    left: 70%;
+    top: 82%;
+    cursor: pointer;
+}
+.camButton{
+    position:absolute;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    border-width: thin;
+    height: 40px;
+    width: 40px;
+    left: 30%;
+    top: 82%;
+    cursor: pointer;
+}
+.wrapper2{
+    background: #fff;
+    width: 450px;
+    border-radius: 16px;
+    position: relative;
+}
+/*Tooltip*/
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  /*Time for sorting users and groups*/
+  .hidden-time{
+    visibility: hidden;
+    position: absolute;
+  }
+  /*How many unread messages*/
+  .unread{
+    color: #fff;
+    background: #333;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+  }
